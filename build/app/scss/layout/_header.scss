@@ -1,3 +1,158 @@
 .header {
+	$this: &;
+
 	flex: 0 0 auto;
+	font-size: 10px;
+	color: $color-1;
+	// position: fixed;
+	width: 100%;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	z-index: 70;
+
+	&-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1em;
+		min-height: 9.3em;
+		padding-block: 1.8em;
+	}
+
+	&__logo {
+		margin-inline-end: 6.4em;
+
+		img {
+			@include box(11.915em, 4.5em);
+		}
+	}
+
+	&__block {
+		display: flex;
+		align-items: center;
+
+		&-right {
+			gap: 2em;
+
+			#{$this} {
+				&__btn {
+					min-height: 5em;
+				}
+			}
+		}
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 1em;
+		border: 1px solid $main-color;
+		border-radius: 5.2em;
+		min-height: 4.5em;
+		padding: 0.5em 2.8em;
+		color: $main-color;
+
+		.icon {
+			color: $main-color;
+		}
+
+		span {
+			font-size: 1.6em;
+		}
+
+		&:hover {
+			color: $color-1;
+			border-color: $color-1;
+
+			.icon {
+				color: $color-1;
+			}
+		}
+	}
+
+	&__link-phone {
+		font-size: 1.6em;
+	}
+
+	&__input {
+		display: flex;
+		align-items: center;
+		color: $color-1;
+		border: 1px solid fade-out($color-1, 0.59);
+		padding-inline-end: 1.35em;
+		width: 100%;
+		max-width: 21.8em;
+		border-radius: 5.2em;
+
+		input {
+			display: flex;
+			width: 100%;
+			height: 45px;
+			padding: 5px 14px 5px 28px;
+			font-size: 1.6em;
+
+			&::placeholder {
+				font-size: 1em;
+			}
+		}
+
+		button {
+			display: inline-flex;
+		}
+
+		.icon {
+			@include box(1.8em);
+		}
+	}
+
+	&__wrap-btns {
+		display: flex;
+		align-items: center;
+		gap: 1.4em;
+	}
+
+	&__btn-cart {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 5em;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background-color: $main-color;
+		color: $color-1;
+		transition: $base-trn;
+
+		&:hover {
+			background-color: lighten($main-color, 7.5%);
+		}
+
+		.icon {
+			color: $color-1;
+		}
+	}
+
+	&__btn-profile {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 5em;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background-color: transparent;
+		color: $color-1;
+		transition: $base-trn;
+		border: 1px solid $main-color;
+
+		&:hover {
+			border-color: $color-1;
+
+			.icon {
+				color: $color-1;
+			}
+		}
+
+		.icon {
+			color: $main-color;
+		}
+	}
 }

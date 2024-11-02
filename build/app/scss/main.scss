@@ -6,7 +6,6 @@
 
 // Basics
 @import "base/_libs";
-@import "base/_fonts";
 @import "base/_reset";
 
 // Components
@@ -16,7 +15,573 @@
 
 @import "layout/_header";
 
-// code...
+.block {
+	font-size: 10px;
+	padding-block: 5em;
+
+	&-catalog {
+		&__box {
+			--gap: 2em;
+
+			display: flex;
+			flex-direction: column;
+			gap: var(--gap, 2em);
+
+			&-footer {
+				display: flex;
+				justify-content: center;
+				gap: var(--gap, 2em);
+
+				.btn-arrow {
+					min-width: 28em;
+				}
+
+				.box-input {
+					border-color: $color-1;
+				}
+			}
+		}
+	}
+
+	&-intro {
+		&__wrapper-slider {
+			display: grid;
+			grid-template-columns: 1fr 30.7em;
+			min-width: 0;
+			width: 100%;
+		}
+
+		&__main-slider {
+			min-width: 0;
+		}
+	}
+}
+
+.logo {
+	display: inline-flex;
+}
+
+.slider {
+	min-width: 0;
+
+	&__control {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+	}
+
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.3em;
+		margin: 1.5em auto 0;
+	}
+
+	&__bullet {
+		display: inline-flex;
+		@include circle(0.8em);
+		border-radius: 3.7em;
+		background-color: $color-6;
+		transition: $base-trn;
+		transition-duration: 0.5s;
+
+		&--is-active {
+			inline-size: 8.5em;
+			position: relative;
+			overflow: hidden;
+			background-color: $main-color;
+
+			&::before {
+				content: "";
+				display: block;
+				width: 0%;
+				height: 100%;
+				background-color: $main-color;
+				border-radius: 3.7em;
+			}
+		}
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 auto;
+		inline-size: 6em;
+		aspect-ratio: 1/1;
+		background-color: $color-1;
+		border-radius: 50%;
+		transition: $base-trn;
+		border: 1px solid $color-1;
+
+		&:hover {
+			background-color: darken($color-1, 12.5%);
+		}
+
+		.icon {
+			@include box(0.7em, 1.4em);
+			color: $color-4;
+		}
+
+		&-next {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		&.is-disabled {
+			pointer-events: none;
+			background-color: transparent;
+
+			.icon {
+				color: $color-1;
+			}
+		}
+	}
+}
+
+.heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1em;
+	margin-block-end: 3em;
+
+	.title {
+		max-width: 65%;
+	}
+}
+
+.list-socials {
+	& > ul {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		& > li {
+			display: flex;
+
+			& > a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				width: 100%;
+				min-height: 6em;
+				border: 1px solid fade-out($color-1, 0.5);
+				border-radius: 3.4em;
+				color: fade-out($color-1, 0.5);
+				gap: 0.7em 1.4em;
+
+				&.active,
+				&:hover {
+					border-color: $main-color;
+					color: $color-1;
+
+					.icon {
+						color: $main-color;
+					}
+				}
+
+				& > span {
+					font-size: 1.4em;
+					line-height: 1.2;
+					font-weight: 600;
+				}
+
+				.icon {
+					@include box(2em);
+					color: fade-out($color-1, 0.5);
+				}
+			}
+		}
+	}
+}
+
+.grid-catalog {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap, 2em);
+
+	.card {
+		flex: 1 1 auto;
+		min-width: 42em;
+		max-width: 64em;
+
+		&:nth-child(1n + 4) {
+			.card {
+				&__image {
+					max-height: 33em;
+				}
+
+				&__title {
+					max-width: 40.5em;
+				}
+			}
+		}
+	}
+}
+
+.banner {
+	display: flex;
+	background: fade-out($color-1, 0.94);
+	border-radius: 2em;
+	min-height: 32em;
+	position: relative;
+	overflow: hidden;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		min-height: 100%;
+		width: 100%;
+		padding: 3.3em 5.8em 5.3em;
+	}
+
+	&__title {
+		font-size: 9.6em;
+		font-weight: 400;
+		color: $color-7;
+	}
+
+	&__text {
+		font-size: 2em;
+		font-weight: 300;
+		color: fade-out($color-1, 0.34);
+		margin-inline-start: 0.65em;
+	}
+
+	&__heading {
+		margin-block-end: 2.7em;
+	}
+
+	&__subtitle {
+		font-weight: 900;
+		font-size: 3.2em;
+	}
+
+	&__image {
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline-end: 7.5%;
+		@include box(auto);
+		width: 100%;
+		max-width: 44.5%;
+		height: auto;
+		max-height: 28.5rem;
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 50%;
+	}
+
+	&__date {
+		position: absolute;
+		inset-block-start: 0.8em;
+		inset-inline-end: 1.2em;
+		font-size: 2em;
+		color: fade-out($color-1, 0.34);
+	}
+
+	&__subtext {
+		font-size: 2em;
+		font-weight: 300;
+		color: fade-out($color-1, 0.34);
+
+		b,
+		strong {
+			color: $main-color;
+			font-weight: inherit;
+		}
+	}
+}
+
+.card {
+	background: fade-out($color-1, 0.96);
+	border-radius: 2em;
+	min-height: 36em;
+	padding: 3.8em 4em;
+	overflow: hidden;
+	position: relative;
+	line-height: 1.2;
+	transition: $base-trn;
+
+	&__box {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1em;
+		position: relative;
+	}
+
+	&__title {
+		font-size: 2.8em;
+		max-width: 260px;
+		font-weight: 300;
+	}
+
+	&__text {
+		font-size: 1.4em;
+		font-weight: 300;
+		color: fade-out($color-1, 0.2);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5em;
+	}
+
+	&__image {
+		display: block;
+		position: absolute;
+		inset-inline-end: 8%;
+		inset-block-end: 0;
+		@include box(auto);
+		max-height: 25em;
+		max-width: 65%;
+		transition: $base-trn;
+		will-change: filter;
+		z-index: -1;
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		inline-size: 5em;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background-color: $main-color;
+		flex: 0 0 auto;
+		margin-block-start: 0.2em;
+		transition: all 0.3s;
+
+		.icon {
+			color: $color-1;
+			@include box(1.8em);
+		}
+	}
+
+	&:hover {
+		background: fade-out($color-1, 0.94);
+
+		.card {
+			&__image {
+				filter: brightness(0.75) grayscale(1);
+			}
+
+			&__btn {
+				transform: translateX(0.5em);
+			}
+		}
+	}
+}
+
+.intro-card {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	border-radius: 2em;
+	background-color: fade-out($color-1, 0.97);
+	min-height: 52.5em;
+	max-width: 97.3em;
+	width: 100%;
+
+	&__image,
+	&__decor {
+		position: absolute;
+		z-index: -1;
+		@include box(100%);
+	}
+
+	&__decor {
+		inset-block-end: 0;
+		inset-inline-start: 1em;
+		max-width: 51.9em;
+		max-height: 30.1em;
+	}
+
+	&__image {
+		inset-block-end: -0.1em;
+		inset-inline-end: -9em;
+		max-width: 62em;
+		max-height: 44.65em;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		max-width: 60em;
+		padding: 8.6em 0 0 5.3em;
+		box-sizing: content-box;
+	}
+
+	&__title {
+		font-size: 5.6em;
+		font-weight: 300;
+		line-height: 1.2;
+	}
+
+	&__text {
+		font-size: 2.4em;
+		font-weight: 300;
+
+		b,
+		strong {
+			color: $main-color;
+		}
+	}
+
+	&__box {
+		display: flex;
+	}
+}
+
+.brand-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: fade-out($color-1, 0.96);
+	border-radius: 2em;
+	min-height: 15em;
+
+	&::selection {
+		background-color: transparent;
+		color: transparent;
+	}
+
+	.icon {
+		@include box(auto);
+		max-width: 12em;
+		max-height: 4.14em;
+	}
+
+	&:hover {
+		transition: $base-trn;
+		background: fade-out($color-1, 0.94);
+	}
+}
+
+.swiper {
+	overflow: hidden;
+	min-width: 0;
+}
+
+.shorts-card {
+	display: flex;
+	height: 52.5em;
+	max-width: 31em;
+	border-radius: 2em;
+	position: relative;
+	overflow: hidden;
+	outline: none;
+
+	&::before {
+		content: "";
+		width: 100%;
+		height: 48%;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(#191919, 1) 57%);
+		position: absolute;
+		z-index: 9;
+		inset-block-end: 0;
+		inset-inline-start: 0;
+	}
+
+	&__image {
+		@include box(100%);
+		pointer-events: none;
+		user-select: none;
+	}
+
+	&__text {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		position: absolute;
+		inset-inline-start: 0;
+		inset-block-end: 0;
+		z-index: 9;
+		text-align: center;
+		font-size: 2em;
+		font-weight: 300;
+		padding: 0.75em 0.75em 0.9em;
+	}
+
+	&__icon {
+		display: inline-flex;
+		inline-size: 7.3em;
+		aspect-ratio: 1/1;
+		border: 1px solid $color-1;
+		position: absolute;
+		padding: 1.6em 1.5em 1.5em 1.6em;
+		z-index: 10;
+		transition: $base-trn;
+		border-radius: 50%;
+		background-color: rgba(#000, 0.01);
+		backdrop-filter: blur(33px);
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		transform: translate(-50%, -50%);
+
+		.icon {
+			@include box(4.2em);
+		}
+	}
+
+	&:hover {
+		color: $color-1;
+	}
+}
+
+.box-input {
+	display: flex;
+	align-items: center;
+	color: $color-1;
+	border: 1px solid fade-out($color-1, 0.8);
+	padding-inline-start: 2.4em;
+	width: 100%;
+	height: 6em;
+	border-radius: 3.4em;
+	transition: $base-trn;
+
+	&:has(input:focus-within) {
+		border-color: fade-out($color-1, 0.5);
+
+		input::placeholder {
+			color: fade-out($color-1, 0.6);
+		}
+	}
+
+	input {
+		display: flex;
+		width: 100%;
+		min-height: 100%;
+		padding: 0 32px 0 19px;
+		font-size: 1.8em;
+		line-height: 1;
+
+		&::placeholder {
+			font-size: 1em;
+			transition: $base-trn;
+		}
+	}
+
+	button {
+		display: inline-flex;
+	}
+
+	.icon {
+		@include box(1.8em);
+	}
+}
 
 @import "layout/_footer";
 

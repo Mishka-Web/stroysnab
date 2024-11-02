@@ -3,14 +3,55 @@
 
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
-	text-align: center;
+	justify-content: space-between;
+	text-align: start;
 	gap: 0.5rem 1.6rem;
 	flex: 0 0 auto;
 	text-decoration: none;
 	transition: $base-trn;
-	font-size: 1.6rem;
-	min-height: 4.4rem;
-	font-weight: 600;
-	padding: 0 1.5rem;
+	min-height: 6em;
+	font-weight: 400;
+	background-color: $main-color;
+	color: $color-1;
+
+	span {
+		font-size: 1.6em;
+		line-height: 1.2;
+	}
+
+	&-arrow {
+		column-gap: 2.8em;
+		padding: 0.5em 0.5em 0.5em 2.8em;
+		border-radius: 3.4em;
+
+		&:hover {
+			background-color: darken($main-color, 6%);
+			color: $color-1;
+
+			// .icon {
+			// 	transform: translateX(0.25em) scale(1.05) translateZ(0);
+			// }
+		}
+
+		i {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			inline-size: 5em;
+			aspect-ratio: 1/1;
+			background-color: fade-out($color-1, 0.8);
+			border-radius: 50%;
+			transition: $base-trn;
+
+			.icon {
+				@include box(1.8em);
+				color: $color-1;
+			}
+		}
+
+		span {
+			display: inline-block;
+			font-size: 1.8em;
+		}
+	}
 }

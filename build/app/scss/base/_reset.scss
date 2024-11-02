@@ -11,7 +11,7 @@
 }
 
 :root {
-	font-size: $root-fs;
+	// font-size: $root-fs;
 	accent-color: $accent-color;
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
@@ -66,23 +66,29 @@ html {
 
 body {
 	display: flex;
-	flex-direction: column;
-	color: $base-color;
+	flex: {
+		direction: column;
+	}
 	font: {
 		style: normal;
 		weight: $base-fw;
-		size: $base-fs;
 		family: $base-ff;
+		font-optical-sizing: auto;
 	}
+	color: $color-1;
+	background: $base-color url("../img/bg.png") 0% 35%/cover no-repeat fixed;
+	font-variant-numeric: lining-nums;
 }
 
 a {
 	text-decoration: none;
 	text-decoration-skip-ink: none;
 	color: $link;
+	transition: $base-trn;
 
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
+		color: $main-color;
 	}
 }
 

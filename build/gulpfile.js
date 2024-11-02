@@ -10,15 +10,19 @@
 /** Configuration for FTP and JavaScript libs **/
 const CONFIG = {
 	ftp: {
-		login: "",
-		pass: "",
-		host: "",
+		login: "c93901_dev_richer_ru",
+		pass: "bimevo35.",
+		host: "h48.netangels.ru",
 		port: 21,
 		localFiles: ["./dist/**/*"],
-		remoteFolder: "",
+		remoteFolder: "/www/stroysnab/",
 	},
 	JS: {
-		libs: ["app/libs/jquery/jquery.min.js"],
+		libs: [
+			"app/libs/jquery/jquery.min.js",
+			"app/libs/swiper/js/swiper.min.js",
+			"app/libs/jquery/plugins/Inputmask-5.x/dist/jquery.inputmask.min.js",
+		],
 	},
 };
 

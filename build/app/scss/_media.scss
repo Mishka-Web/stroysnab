@@ -14,7 +14,7 @@ $breakpoints: (
 
 @include mq("desktop", min) {
 	.container {
-		max-width: 1256px;
+		max-width: 1300px;
 	}
 }
 

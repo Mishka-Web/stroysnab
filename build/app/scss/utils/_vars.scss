@@ -1,14 +1,20 @@
 $root-fs: 10px !default;
 $base-fs: 1.6rem !default;
 $base-fw: 400 !default;
-$base-ff: "Font", sans-serif !default;
-$base-trn: all 0.15s ease-in 0s !default;
+$base-ff: "Onest", sans-serif !default;
+$base-trn: all 0.22s ease 0s !default;
 
-$base-color: #000000;
-$main-color: #333333;
+$base-color: #111111;
+$main-color: #ef7f1a;
 $color-1: #ffffff;
+$color-2: #646464;
+$color-3: #878787;
+$color-4: #0a0a0a;
+$color-5: #ebecec;
+$color-6: #434343;
+$color-7: #ec6408;
 
 $accent-color: $main-color;
 $bg-selection-color: $main-color;
 $text-selection-color: $color-1;
-$link: $base-color;
+$link: $color-1;

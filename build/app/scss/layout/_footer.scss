@@ -1,3 +1,183 @@
 .footer {
 	flex: 0 0 auto;
+	background: fade-out($color-1, 0.94);
+	margin-block-start: 5em;
+	font-size: 10px;
+
+	&-inner {
+		display: flex;
+		flex-direction: column;
+		gap: 4.9em;
+		min-height: 42.8em;
+		padding-block: 2.7em 3em;
+	}
+
+	&-top {
+		display: grid;
+		grid-template-columns: 1fr 19.5em;
+		gap: 2em;
+	}
+
+	&__address {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 3em;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 1.2;
+		color: $color-3;
+
+		a {
+			display: inline-block;
+			font-size: 1.2em;
+
+			&:not(:hover) {
+				color: $color-3;
+			}
+		}
+
+		& > span {
+			display: inline-block;
+			font-size: 1.2em;
+			margin-inline-end: -1.325em;
+		}
+	}
+
+	&__copyright {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.9em;
+		font-weight: 500;
+		color: $color-3;
+		line-height: 1.2;
+
+		p {
+			font-size: 1.2em;
+		}
+
+		a {
+			display: inline-flex;
+		}
+
+		.icon {
+			@include box(11.384em, 2em);
+		}
+	}
+
+	&__input {
+		max-width: 108em;
+	}
+
+	&__wrapper-box {
+		display: flex;
+		flex-direction: column;
+		gap: 4em;
+	}
+
+	&-bottom {
+		&__box {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 3em;
+		}
+	}
+
+	&__box-info {
+		& > ul {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 4em 11em;
+
+			& > li {
+				display: flex;
+				flex-direction: column;
+				gap: 0.9em;
+
+				& > p {
+					font-size: 1.6em;
+					font-weight: 400;
+					line-height: 1.2;
+					color: $color-2;
+
+					b,
+					strong {
+						font-weight: inherit;
+						color: $main-color;
+					}
+				}
+
+				& > a {
+					display: flex;
+					align-items: center;
+					gap: 1.1em;
+
+					&:not(:hover) {
+						color: $color-5;
+					}
+
+					span {
+						font-size: 2.6em;
+						line-height: 1.2;
+					}
+
+					.icon {
+						@include box(2.2em);
+						color: $main-color;
+					}
+				}
+			}
+		}
+	}
+
+	&__nav {
+		line-height: 1.2;
+
+		& > ul {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			gap: 4em 12em;
+
+			& > li {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 2em;
+
+				& > :where(a, span) {
+					font-size: 2em;
+
+					&:not(:hover) {
+						color: fade-out($color-1, 0.2);
+					}
+				}
+
+				& > ul {
+					display: flex;
+					flex-direction: column;
+					gap: 1em;
+
+					& > li {
+						display: inline-flex;
+
+						a {
+							font-size: 1.6em;
+							font-weight: 400;
+							line-height: 1.2;
+
+							&:not(:hover) {
+								color: $color-2;
+							}
+
+							&:hover {
+								color: fade-out($color-1, 0.2);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
