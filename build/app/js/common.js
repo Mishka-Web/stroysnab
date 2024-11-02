@@ -7,7 +7,7 @@ $(function () {
 		duration: 750,
 		easing: "ease",
 		once: true,
-		offset: 350,
+		offset: 300,
 	});
 
 	$(window).on("resize scroll", function () {
@@ -32,7 +32,7 @@ $(function () {
 
 	new Swiper(".block-intro__main-slider .swiper", {
 		slidesPerView: 1,
-		speed: 600,
+		speed: 1000,
 		spaceBetween: 20,
 		breakpoints: {},
 		autoplay: {
@@ -45,30 +45,36 @@ $(function () {
 		},      
 		observer: true,
 		observeParents: true,
-		on: {
-			autoplayTimeLeft(s, time, progress) {
-				$(".block-intro__main-slider .slider__progress").css("--progress", `${100 - progress * 100}%`);
-			}
-		},
 		pagination: {
 			el: ".block-intro__main-slider .slider__pagination",
 			clickable: true,
 			bulletClass: "slider__bullet",
 			bulletActiveClass: "slider__bullet--is-active",
+			renderBullet: function (index, className) {
+				return `<button type="button" class="${className}"><span></span></button>`;
+			},
+		},
+		on: {
+			autoplayTimeLeft(s, time, progress) {
+				$(".block-intro__main-slider").find(".slider__bullet--is-active > span").css("width", `${100 - progress * 100}%`);
+			}
 		},
 	});
 
 	new Swiper(".slider .swiper", {
 		slidesPerView: 1,
-		speed: 800,
+		speed: 1000,
 		spaceBetween: 20,
 		breakpoints: {},
-		loop: true,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false
+		},
 		observer: true,
 		observeParents: true,
 		on: {
 			autoplayTimeLeft(s, time, progress) {
-				$(".slider .slider__progress").css("--progress", `${100 - progress * 100}%`);
+				$(".slider .slider__bullet--is-active > span").css("width", `${100 - progress * 100}%`);
 			}
 		},
 		pagination: {
@@ -76,6 +82,9 @@ $(function () {
 			clickable: true,
 			bulletClass: "slider__bullet",
 			bulletActiveClass: "slider__bullet--is-active",
+			renderBullet: function (index, className) {
+				return `<button type="button" class="${className}"><span></span></button>`;
+			},
 		},
 	});
 
@@ -94,10 +103,14 @@ $(function () {
 	});
 
 	new Swiper(".brands-slider .swiper", {
-		slidesPerView: 6,
+		slidesPerView: 4,
 		speed: 500,
 		spaceBetween: 20,
-		breakpoints: {},
+		breakpoints: {
+			992: {
+				slidesPerView: 6
+			}
+		},
 		navigation: {
 			prevEl: ".block-brands .slider__btn-prev",
 			nextEl: ".block-brands .slider__btn-next",
@@ -108,10 +121,14 @@ $(function () {
 	});
 
 	new Swiper(".shorts-slider .swiper", {
-		slidesPerView: 4,
+		slidesPerView: 3,
 		speed: 650,
 		spaceBetween: 20,
-		breakpoints: {},
+		breakpoints: {
+			992: {
+				slidesPerView: 4
+			}
+		},
 		navigation: {
 			prevEl: ".block-shorts .slider__btn-prev",
 			nextEl: ".block-shorts .slider__btn-next",

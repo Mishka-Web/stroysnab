@@ -20,7 +20,7 @@ const CONFIG = {
 	JS: {
 		libs: [
 			"app/libs/jquery/jquery.min.js",
-			"app/libs/swiper/js/swiper.min.js",
+			// "app/libs/swiper/js/swiper.min.js",
 			"app/libs/jquery/plugins/Inputmask-5.x/dist/jquery.inputmask.min.js",
 		],
 	},

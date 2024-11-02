@@ -18,6 +18,28 @@ $breakpoints: (
 	}
 }
 
+@include mq("desktop") {
+	.block, .header, .footer {
+		font-size: 8.5px;
+	}
+
+	.intro-card {
+		max-width: 100%;
+	}
+
+	.header__input input {
+		height: 37px;
+		padding-inline-start: 20px;
+		padding-block: 0;
+	}
+}
+
+@include mq("laptop") {
+	.block, .header, .footer {
+		font-size: 7.5px;
+	}
+}
+
 @include mq("mobile") {
 	.container {
 		--bs-gutter-x: 30px;

@@ -8,6 +8,19 @@
 		color: $text-selection-color;
 		background-color: $bg-selection-color;
 	}
+
+	&::-webkit-scrollbar {
+		width: 0.5em;
+		height: 0.5em;
+
+		&-thumb {
+			background-color: $color-1;
+		}
+
+		&-track {
+			background-color: $color-6;
+		}
+	}
 }
 
 :root {
