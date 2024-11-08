@@ -1,6 +1,8 @@
 $breakpoints: (
+	mobile-sm: 420px,
+	mobile-md: 460px,
 	mobile: 576px,
-	tablet: 768px,
+	tablet: 769px,
 	tablet-wide: 992px,
 	laptop: 1200px,
 	desktop: 1400px
@@ -12,6 +14,12 @@ $breakpoints: (
 	}
 }
 
+@media screen and (min-width: 640px) {
+	.mob-menu {
+		display: none;
+	}
+}
+
 @include mq("desktop", min) {
 	.container {
 		max-width: 1300px;
@@ -19,7 +27,9 @@ $breakpoints: (
 }
 
 @include mq("desktop") {
-	.block, .header, .footer {
+	.block,
+	.header,
+	.footer {
 		font-size: 8.5px;
 	}
 
@@ -35,13 +45,295 @@ $breakpoints: (
 }
 
 @include mq("laptop") {
-	.block, .header, .footer {
+	.block,
+	.header,
+	.footer {
 		font-size: 7.5px;
+	}
+
+	.header__btn {
+		min-height: 37.5px;
+	}
+}
+
+@include mq("tablet-wide") {
+	.title {
+		font-size: 7em;
+	}
+
+	.header__logo {
+		margin-inline-end: 3.2em;
+	}
+
+	.header {
+		&__block-left {
+			.header {
+				&-inner {
+					padding-block: 3.2em;
+				}
+
+				&__btn {
+					align-items: center;
+					justify-content: center;
+					padding: 0;
+					aspect-ratio: 1/1;
+					min-height: 5em;
+
+					.icon {
+						width: 2.75em;
+					}
+				}
+			}
+		}
+	}
+
+	.block-intro__wrapper-slider {
+		grid-template-columns: 1fr;
+		gap: 5.4em;
+	}
+
+	.block-catalog__box-footer .btn-arrow {
+		min-width: auto;
+	}
+
+	.grid-catalog {
+		.card,
+		.card:nth-child(1n + 4) {
+			width: 100%;
+			max-width: 100%;
+			flex: 1 0 calc(100% / 2 - 1em);
+		}
+	}
+}
+
+@include mq("tablet") {
+	.container {
+		--bs-gutter-x: 30px;
+
+		max-width: 640px;
+	}
+
+	.shorts-card__text {
+		padding-block: 1em 1.1em;
+	}
+
+	.intro-card__decor {
+		max-width: 55%;
+	}
+
+	.intro-card__image {
+		max-width: 70%;
+	}
+
+	.block-intro__second-slider {
+		.swiper {
+			overflow: visible;
+		}
+	}
+
+	.header__logo {
+		margin-inline-end: 3.2em;
+	}
+
+	.header__block-right {
+		gap: 1.2em;
+	}
+
+	.shorts-card {
+		max-width: 100%;
+	}
+
+	.title {
+		font-size: 6em;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.grid-catalog {
+		display: none;
+	}
+
+	.footer {
+		padding-block-end: 13.5em;
+	}
+
+	.catalog-slider {
+		display: block;
+	}
+
+	.header-inner {
+		padding-block: 3.2em 2.4em;
+	}
+
+	.header__input {
+		display: none;
+	}
+
+	.header__block-left {
+		justify-content: space-between;
+		width: 100%;
+
+		.header__btn {
+			display: none;
+		}
+	}
+
+	.header__block-right {
+		.header__btn,
+		.header__link-phone {
+			display: none;
+		}
+	}
+
+	.header__btn-cart {
+		order: 2;
+	}
+
+	.header-inner {
+		gap: 1.2em;
+	}
+
+	.header__logo {
+		img {
+			@include box(14em, auto);
+		}
+	}
+
+	.block {
+		&:first-child {
+			padding-block-start: 1.5em;
+		}
 	}
 }
 
 @include mq("mobile") {
-	.container {
-		--bs-gutter-x: 30px;
+	.footer-top {
+		grid-template-columns: 1fr;
+		gap: 4em;
+	}
+
+	.block-intro__second-slider {
+		display: none;
+	}
+
+	.banner {
+		&__image {
+			display: none;
+		}
+
+		&__content {
+			max-width: 100%;
+		}
+
+		&__wrapper {
+			padding-block-end: 3.3em;
+		}
+	}
+
+	.title {
+		font-size: 5em;
+	}
+
+	.block-catalog__box-footer {
+		.box-input {
+			display: none;
+		}
+	}
+
+	.block-catalog__box-footer {
+		justify-content: flex-end;
+	}
+
+	.shorts-card {
+		height: 46em;
+	}
+
+	.intro-card {
+		min-height: 46em;
+	}
+
+	.intro-card__title {
+		font-size: 4.8em;
+		text-wrap: balance;
+	}
+
+	.intro-card__decor {
+		max-width: 65%;
+	}
+
+	.intro-card__image {
+		max-width: 80%;
+	}
+
+	.intro-card__content {
+		padding: 4em;
+	}
+
+	.footer {
+		.list-socials {
+			& > ul {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.block-catalog__box-footer .btn-arrow {
+		width: 100%;
+	}
+
+	.intro-card__title {
+		font-size: 4em;
+	}
+
+	.intro-card__text {
+		font-size: 2.2em;
+	}
+
+	.intro-card__content {
+		gap: 1.2em;
+	}
+}
+
+@include mq("mobile-md") {
+	.shorts-card {
+		height: 64em;
+
+		&__text {
+			font-size: 2.4em;
+			padding-block: 1.75em;
+		}
+	}
+
+	.banner {
+		&__wrapper {
+			padding: 3.3em;
+		}
+	}
+}
+
+@include mq("mobile-sm") {
+	.shorts-card {
+		height: 60em;
+
+		&__text {
+			font-size: 2.2em;
+			padding-block: 1.75em;
+		}
+	}
+
+	.footer {
+		.list-socials {
+			& > ul {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	.block-catalog__box-footer {
+		flex-direction: column;
 	}
 }

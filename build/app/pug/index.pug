@@ -59,7 +59,7 @@ block main
 									span.shorts-card__icon
 										img.icon(src="./img/icons/play.svg" alt="")
 									p.shorts-card__text Знакомимся с компанией СтройСнаб
-						.slider__pagination
+						.slider__pagination.d-none.d-lg-flex
 
 	section.block.block-catalog(data-aos="fade-up")  
 		.container 
@@ -67,6 +67,55 @@ block main
 				h2.title Каталог
 
 			.block-catalog__box
+				.catalog-slider
+					.swiper
+						.swiper-wrapper
+							.swiper-slide 
+								a.card(href="index.html")
+									img.icon.card__image(src="./img/catalog/img1.png" alt="")
+									.card__box 
+										.card__content 
+											h4.card__title Инструменты
+											p.card__text 148 позиций
+										button.card__btn(type="button")
+											<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8125 9H15.1875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.125 3.9375L15.1875 9L10.125 14.0625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							.swiper-slide 
+								a.card(href="index.html")
+									img.icon.card__image(src="./img/catalog/img2.png" alt="")
+									.card__box 
+										.card__content 
+											h4.card__title Пена, герметики, жидкий клей
+											p.card__text 148 позиций
+										button.card__btn(type="button")
+											<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8125 9H15.1875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.125 3.9375L15.1875 9L10.125 14.0625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							.swiper-slide 
+								a.card(href="index.html")
+									img.icon.card__image(src="./img/catalog/img3.png" alt="")
+									.card__box 
+										.card__content 
+											h4.card__title Металлопрокат
+											p.card__text 153 позиций
+										button.card__btn(type="button")
+											<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8125 9H15.1875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.125 3.9375L15.1875 9L10.125 14.0625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							.swiper-slide 
+								a.card(href="index.html")
+									img.icon.card__image(src="./img/catalog/img4.png" alt="")
+									.card__box 
+										.card__content 
+											h4.card__title Отопление, водоснабжение, канализация
+											p.card__text 148 позиций
+										button.card__btn(type="button")
+											<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8125 9H15.1875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.125 3.9375L15.1875 9L10.125 14.0625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							.swiper-slide 
+								a.card(href="index.html")
+									img.icon.card__image(src="./img/catalog/img5.png" alt="")
+									.card__box 
+										.card__content 
+											h4.card__title Печи, камины
+											p.card__text 153 позиций
+										button.card__btn(type="button")
+											<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8125 9H15.1875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.125 3.9375L15.1875 9L10.125 14.0625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
 				.grid-catalog
 					a.card(href="index.html")
 						img.icon.card__image(src="./img/catalog/img1.png" alt="")
@@ -163,31 +212,31 @@ block main
 									img.icon(src="./img/icons/play.svg" alt="")
 								p.shorts-card__text Знакомимся с компанией СтройСнаб
 
-	section.block.block-actions(data-aos="fade-up")
-		.container 
-			.heading 
-				h2.title Акции
-				.slider__control 
-					button.slider__btn.slider__btn-prev(type="button")
-						<svg class="icon" width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.24988 12.9401L1.35988 8.05006C0.782383 7.47256 0.782383 6.52756 1.35988 5.95006L6.24988 1.06006" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-					button.slider__btn.slider__btn-next(type="button")
-						<svg class="icon" width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.24988 12.9401L1.35988 8.05006C0.782383 7.47256 0.782383 6.52756 1.35988 5.95006L6.24988 1.06006" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+	//- section.block.block-actions(data-aos="fade-up")
+	//- 	.container 
+	//- 		.heading 
+	//- 			h2.title Акции
+	//- 			.slider__control 
+	//- 				button.slider__btn.slider__btn-prev(type="button")
+	//- 					<svg class="icon" width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.24988 12.9401L1.35988 8.05006C0.782383 7.47256 0.782383 6.52756 1.35988 5.95006L6.24988 1.06006" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+	//- 				button.slider__btn.slider__btn-next(type="button")
+	//- 					<svg class="icon" width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.24988 12.9401L1.35988 8.05006C0.782383 7.47256 0.782383 6.52756 1.35988 5.95006L6.24988 1.06006" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
-			.actions-slider 
-				.swiper
-					.swiper-wrapper
-						-for(i = 0; i < 3; i++)
-							.swiper-slide 
-								article.banner
-									img.icon.banner__image(src="./img/image.png" alt="")
-									.banner__wrapper 
-										.banner__content 
-											.banner__heading 
-												h4.subtitle.banner__subtitle INNER KRAFT
-												p.banner__subtext штукатурная смесь <b>профессионалов</b>
-											h3.banner__title.title -30%
-											p.banner__text при покупке от 3 штук
-										p.banner__date до <time datetime="2024-11-10">10.11.2024</time>
+	//- 		.actions-slider 
+	//- 			.swiper
+	//- 				.swiper-wrapper
+	//- 					-for(i = 0; i < 3; i++)
+	//- 						.swiper-slide 
+	//- 							article.banner
+	//- 								img.icon.banner__image(src="./img/image.png" alt="")
+	//- 								.banner__wrapper 
+	//- 									.banner__content 
+	//- 										.banner__heading 
+	//- 											h4.subtitle.banner__subtitle INNER KRAFT
+	//- 											p.banner__subtext штукатурная смесь <b>профессионалов</b>
+	//- 										h3.banner__title.title -30%
+	//- 										p.banner__text при покупке от 3 штук
+	//- 									p.banner__date до <time datetime="2024-11-10">10.11.2024</time>
 
 	section.block.block-brands(data-aos="fade-up")  
 		.container 

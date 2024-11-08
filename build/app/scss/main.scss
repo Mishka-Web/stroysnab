@@ -142,6 +142,14 @@
 	}
 }
 
+.catalog-slider {
+	display: none;
+
+	.card {
+		min-height: 35em;
+	}
+}
+
 .heading {
 	display: flex;
 	align-items: center;
@@ -303,6 +311,8 @@
 }
 
 .card {
+	display: flex;
+	flex-direction: column;
 	background: fade-out($color-1, 0.94);
 	border-radius: 2em;
 	min-height: 36em;
@@ -347,6 +357,7 @@
 		@include box(auto);
 		max-height: 25em;
 		max-width: 65%;
+		object-position: right bottom;
 		transition: $base-trn;
 		will-change: filter;
 		z-index: -1;
@@ -401,6 +412,7 @@
 		position: absolute;
 		z-index: -1;
 		@include box(100%);
+		object-position: bottom;
 	}
 
 	&__decor {
@@ -521,6 +533,7 @@
 		font-weight: 300;
 		padding: 0.75em 0.75em 0.9em;
 		border-radius: 0 0 2.4em 2.4em;
+		width: 100%;
 	}
 
 	&__icon {
@@ -594,6 +607,83 @@
 
 	.icon {
 		@include box(1.8em);
+	}
+}
+
+.mob-menu {
+	--px: 14px;
+
+	width: calc(100% - var(--px) * 2);
+	position: fixed;
+	inset-inline-start: var(--px);
+	inset-block-end: 28px;
+	padding: 14px 28px;
+	background: fade-out($color-4, 0.5);
+	backdrop-filter: blur(3px);
+	border-radius: 32px;
+	z-index: 80;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: all 0.3s;
+
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
+
+	&__list {
+		max-width: 363px;
+		margin: 0 auto;
+
+		& > ul {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 8px;
+
+			& > li {
+				display: inline-flex;
+
+				&.is-home {
+					& > a {
+						background-color: $color-1;
+
+						.icon {
+							color: $color-4;
+						}
+					}
+				}
+
+				& > a  {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					min-width: 36px;
+					padding: 8px;
+					aspect-ratio: 1/1;
+					border: 2px solid $color-1;
+					border-radius: 50%;
+					flex: 0 0 auto;
+
+					&:hover {
+						border-color: $main-color;
+
+						.icon {
+							color: $main-color;
+						}
+					}
+
+					.icon {
+						display: block;
+						@include box(22px);
+						color: $color-1;
+						transition: all 0.25s ease;
+					}
+				}
+			}
+		}
 	}
 }
 
