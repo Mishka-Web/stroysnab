@@ -34,6 +34,7 @@
 	"dependencies": {
 		"@capacitor/haptics": "^6.0.1",
 		"howler": "^2.2.4",
+		"mixitup": "^3.3.2",
 		"swiper": "^11.1.14"
 	}
 }

@@ -33,6 +33,12 @@ $breakpoints: (
 		font-size: 8.5px;
 	}
 
+	.footer {
+		&__address-company {
+			max-width: 36.175%;
+		}
+	}
+
 	.intro-card {
 		max-width: 100%;
 	}
@@ -54,11 +60,32 @@ $breakpoints: (
 	.header__btn {
 		min-height: 37.5px;
 	}
+
+	.footer {
+		&__address-company {
+			max-width: 32.5%;
+		}
+	}
 }
 
 @include mq("tablet-wide") {
 	.title {
 		font-size: 7em;
+	}
+
+	.footer {
+		&__address-company {
+			max-width: 100%;
+			order: -1;
+
+			& > ul {
+				row-gap: 4em;
+			}
+		}
+
+		&__wrap-nav {
+			row-gap: 4em;
+		}
 	}
 
 	.header__logo {
@@ -113,6 +140,15 @@ $breakpoints: (
 		max-width: 640px;
 	}
 
+	.footer__nav > ul {
+		justify-content: stretch;
+	}
+
+	// .footer__address-company>ul {
+	// 	flex-direction: row;
+	// 	flex-wrap: wrap;
+	// }
+
 	.shorts-card__text {
 		padding-block: 1em 1.1em;
 	}
@@ -149,7 +185,8 @@ $breakpoints: (
 }
 
 @media screen and (max-width: 640px) {
-	.grid-catalog {
+	.grid-catalog,
+	.header__link-social {
 		display: none;
 	}
 
@@ -210,6 +247,22 @@ $breakpoints: (
 	.footer-top {
 		grid-template-columns: 1fr;
 		gap: 4em;
+	}
+
+	.card {
+		&__text {
+			font-size: 1.8em;
+		}
+
+		&__content {
+			width: 100%;
+			row-gap: 1.2em;
+		}
+
+		&__title {
+			width: 100%;
+			max-width: 95%;
+		}
 	}
 
 	.block-intro__second-slider {

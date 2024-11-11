@@ -1,0 +1,93 @@
+extends ../sample/_default
+
+block tools
+	include ../utils/_mixins
+
+block title
+	title Каталог товаров
+
+block main
+	section.block.block-catalog.block-catalog-products
+		.container 
+			nav.breadcrumbs(data-aos="fade" data-aos-delay="500") 
+				ul 
+					li 
+						a(href="index.html") Главная
+					li 
+						a(href="index.html") Каталог
+			.heading(data-aos="fade" data-aos-delay="850") 
+				h1.title Каталог
+			.block-catalog__main.mixi-container
+				.box-input(data-aos="fade" data-aos-delay="850")  
+					button(type="submit")
+						<svg class="icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.15625 14.5625C11.4182 14.5625 14.0625 11.9182 14.0625 8.65625C14.0625 5.39432 11.4182 2.75 8.15625 2.75C4.89432 2.75 2.25 5.39432 2.25 8.65625C2.25 11.9182 4.89432 14.5625 8.15625 14.5625Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.332 12.8328L15.7493 16.2501" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					input(type="text" placeholder="Поиск по всему каталогу")
+
+				.block-catalog__filters(data-aos="fade" data-aos-delay="1200")
+					button.block-catalog__filter-btn(type="button" data-sort="popular:asc")
+						span По популярности
+						<svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8.4707 10.74L12.0007 14.26L15.5307 10.74" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					button.block-catalog__filter-btn(type="button" data-sort="abc:asc")
+						span По алфавиту
+						<svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8.4707 10.74L12.0007 14.26L15.5307 10.74" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					button.block-catalog__filter-btn(type="button" data-sort="price:asc")
+						span По цене
+						<svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8.4707 10.74L12.0007 14.26L15.5307 10.74" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					button.block-catalog__filter-btn(type="button" data-sort="stack:asc")
+						span По наличию
+						<svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8.4707 10.74L12.0007 14.26L15.5307 10.74" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg> 
+
+				.block-catalog__grid-cards(data-aos="fade" data-aos-delay="1550")
+					a.prod-card.mix(href="single.html" data-popular="1" data-price="1367" data-abc="Плита OSB-3 Kronospan 2500х1250х12мм")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image1.png", alt="")
+						h3.prod-card__title Плита OSB-3 Kronospan 2500х1250х12мм
+						p.prod-card__price 1 367 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="2" data-price="1422" data-abc="Фанера FK Е1 1525х1525х12мм сорт 4/4")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image2.png", alt="")
+						h3.prod-card__title Фанера FK Е1 1525х1525х12мм сорт 4/4
+						p.prod-card__price 1 422 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="3" data-price="1061" data-abc="Алита OSB-3 2500х1250х9мм Кроношпан")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image1.png", alt="")
+						h3.prod-card__title Алита OSB-3 2500х1250х9мм Кроношпан
+						p.prod-card__price 1 061 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="4" data-price="1367" data-abc="ДВП 2745х1220х3,2мм")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image3.png", alt="")
+						h3.prod-card__title ДВП 2745х1220х3,2мм
+						p.prod-card__price 1 367 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="5" data-price="321" data-abc="Плита OSB-3 Kronospan 2500х1250х12мм")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image4.png", alt="")
+						h3.prod-card__title Плита OSB-3 Kronospan 2500х1250х12мм
+						p.prod-card__price 321 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="6" data-price="990" data-abc="Фанера FK Е1 1525х1525х12мм сорт 4/4 FK Е1 1525х1525х12мм сорт<br>4/4")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image5.png", alt="")
+						h3.prod-card__title Фанера FK Е1 1525х1525х12мм сорт 4/4 FK Е1 1525х1525х12мм сорт<br>4/4
+						p.prod-card__price 990 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="7" data-price="776" data-abc="Фанера ФК Е1 1525х1525х6мм сорт 4/4")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image1.png", alt="")
+						h3.prod-card__title Фанера ФК Е1 1525х1525х6мм сорт 4/4
+						p.prod-card__price 776 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="8" data-price="1367" data-abc="Плита OSB-3 Kronospan 2500х1250х12мм")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image2.png", alt="")
+						h3.prod-card__title Плита OSB-3 Kronospan 2500х1250х12мм
+						p.prod-card__price 1 367 руб./шт
+					a.prod-card.mix(href="single.html" data-popular="9" data-price="1367" data-abc="Плита OSB-3 Kronospan 2500х1250х12мм")
+						.prod-card__image 
+							img.icon(src="./img/catalog/products/image1.png", alt="")
+						h3.prod-card__title Плита OSB-3 Kronospan 2500х1250х12мм
+						p.prod-card__price 1 367 руб./шт

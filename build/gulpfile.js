@@ -20,7 +20,7 @@ const CONFIG = {
 	JS: {
 		libs: [
 			"app/libs/jquery/jquery.min.js",
-			"./node_modules/howler/dist/howler.min.js",
+			"./node_modules/mixitup/dist/mixitup.min.js",
 			"app/libs/jquery/plugins/Inputmask-5.x/dist/jquery.inputmask.min.js",
 		],
 	},

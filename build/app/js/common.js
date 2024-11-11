@@ -10,6 +10,8 @@ $(function () {
 		offset: 250,
 	});
 
+	Fancybox.bind("[data-fancybox]");
+
 	$(window).on("resize scroll", function () {
 		AOS.refresh();
 	});
@@ -21,11 +23,19 @@ $(function () {
 		);
 	});
 
-	$(".mob-menu__list").on("click", "a", function () {
-		window.navigator.vibrate(40);
-	});
+	if ($(".mixi-container").get(0)) {
+		mixitup(".mixi-container", {
+			animation: {
+				effects: "fade translateZ(-150px)",
+				applyPerspective: true,
 
-	Fancybox.bind("[data-fancybox]");
+			},
+		});
+	}
+
+	$(".mob-menu__list").on("click", "a", function () {
+		window.navigator.vibrate(35);
+	});
 
 	$("[data-mask=tel], .data-mask--tel").inputmask("+7 (999)-999-99-99", {
 		showMaskOnHover: false,
