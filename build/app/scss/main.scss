@@ -128,6 +128,182 @@
 		}
 	}
 
+	&-page {
+		&-contacts {
+			.heading {
+				margin-block-end: 3.8em;
+
+				.title {
+					font-size: 5em;
+					font-weight: 200;
+				}
+			}
+
+			&__list-work-times {
+				& > ul {
+					display: grid;
+					grid-template-columns: repeat(7, 1fr);
+					gap: 1em;
+
+					& > li {
+						display: flex;
+						flex-direction: column;
+						gap: 0.9em;
+						padding: 0.9em 0.6em 1em;
+						border-radius: 1em;
+						background-color: fade-out($color-10, 0.9);
+						min-height: 8em;
+						text-align: center;
+
+						p {
+							font-size: 1.2em;
+							font-weight: 300;
+						}
+
+						& > div {
+							display: flex;
+							flex-direction: column;
+							gap: 0.45em;
+						}
+
+						& > p {
+							font-weight: 400;
+						}
+
+						&.active {
+							color: $main-color;
+							 
+							hr {
+								border-color: $main-color;
+							}
+						}
+					}
+				}
+			}
+
+			&__list-contacts {
+				& > ul {
+					display: flex;
+					flex-direction: column;
+					gap: 2em;
+
+					& > li {
+						display: flex;
+
+						& > a {
+							display: inline-flex;
+							align-items: center;
+							gap: 0.9em;
+
+							&:hover {
+								.icon {
+									color: $main-color;
+								}
+							}
+
+							& > span {
+								font-size: 1.6em;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+			}
+
+			&__info {
+				&-title {
+					font-size: 1.6em;
+					font-weight: 400;
+					line-height: 1.2;
+				}
+			}
+
+			&__grid-box {
+				.tabs {
+					&__container {
+						display: flex;
+						flex-direction: column;
+						gap: 2em;
+
+						.tabs {
+							&__content {
+								&.active {
+									display: grid;
+								}
+
+								grid-template-columns: 51.6em 1fr;
+								gap: 2em;
+							}
+						}
+					}
+				}
+			}
+
+			&__info-box {
+				display: flex;
+				flex-direction: column;
+				border-radius: 2em;
+				background: fade-out($color-1, 0.9);
+				gap: 3em;
+				min-height: 30.9em;
+				padding: 2.3em 2.3em 1.1em;
+			}
+
+			&__box-map {
+				position: relative;
+				border-radius: 2em;
+			}
+
+			&__map {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 2em;
+				inset-block-start: 0;
+				inset-inline-start: 0;
+				z-index: 1;
+				filter: grayscale(1) invert(0.875);
+
+				&-btn-link {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					gap: 1.4em;
+					text-align: center;
+					color: $main-color;
+					padding: 0.5em 2.8em;
+					position: absolute;
+					inset-block-end: 2em;
+					inset-inline-start: 2em;
+					z-index: 5;
+					border: 2px solid $main-color;
+					min-height: 4.5em;
+					background: fade-out($color: #000000, $amount: 0.5);
+					backdrop-filter: blur(10px);
+					border-radius: 5.2em;
+
+					&:hover {
+						color: $color-1;
+						border-color: $color-1;
+
+						.icon {
+							color: $color-1;
+						}
+					}
+
+					& > span {
+						font-size: 1.6em;
+						font-weight: 400;
+					}
+
+					.icon {
+						color: $main-color;
+					}
+				}
+			}
+		}
+	}
+
 	&-intro {
 		&__wrapper-slider {
 			display: grid;
@@ -148,7 +324,6 @@
 	flex-direction: column;
 	gap: 1em;
 	line-height: 1.2;
-
 
 	&:hover {
 		.prod-card {
@@ -206,6 +381,46 @@
 		color: $main-color;
 		font-size: 2.4em;
 		margin-block-start: auto;
+	}
+}
+
+.tabs {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
+		margin-block-end: 2em;
+	}
+
+	&__content {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		border: 2px solid fade-out($color-1, 0.8);
+		height: 6em;
+		padding-inline: 2.8em;
+		border-radius: 3.4em;
+		transition: $base-trn;
+
+		& > span {
+			display: inline-block;
+			font-size: 1.8em;
+			font-weight: 400;
+			line-height: 1.2;
+		}
+
+		&.active {
+			border-color: $main-color;
+		}
 	}
 }
 
@@ -865,7 +1080,7 @@
 					}
 				}
 
-				& > a  {
+				& > a {
 					display: inline-flex;
 					align-items: center;
 					justify-content: center;

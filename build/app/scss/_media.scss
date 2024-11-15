@@ -140,6 +140,26 @@ $breakpoints: (
 		max-width: 640px;
 	}
 
+	.tabs {
+		&__list {
+			overflow: auto hidden;
+			flex-wrap: nowrap;
+		}
+
+		&__item {
+			flex: 0 0 auto;
+			white-space: nowrap;
+		}
+	}
+
+	.block-page-contacts__grid-box .tabs__container .tabs__content {
+		grid-template-columns: 1fr;
+	}
+
+	.block-page-contacts__box-map {
+		min-height: 35em;
+	}
+
 	.footer__nav > ul {
 		justify-content: stretch;
 	}
