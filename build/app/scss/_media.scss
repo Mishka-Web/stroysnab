@@ -351,21 +351,26 @@ $breakpoints: (
 				max-width: 45%;
 			}
 		}
-		
-		.block-page-contacts__list-work-times>ul {
-			flex-wrap: nowrap;
-			white-space: nowrap;
-			overflow: auto hidden;
 
-			& > li {
-				min-width: 65px;
+		.block-page-contacts__list-work-times {
+			max-width: 80vw;
+
+			& > ul {
+				display: flex;
+				flex-wrap: nowrap;
+				white-space: nowrap;
+				overflow: auto hidden;
+
+				& > li {
+					min-width: 65px;
+				}
 			}
 		}
 
 		.block-page-contacts__map {
 			max-width: 100%;
 			width: 100%;
-	
+
 			iframe {
 				max-width: 100%;
 				width: 100%;
