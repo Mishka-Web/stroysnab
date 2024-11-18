@@ -23,6 +23,8 @@
 		border-radius: 5.2em;
 		min-height: 6em;
 		padding-inline: 3.35em;
+		justify-content: center;
+		text-align: center;
 
 		&:hover {
 			background-color: darken($main-color, 5%);
@@ -37,13 +39,16 @@
 	}
 
 	&-outline {
+		justify-content: center;
 		border-radius: 5.2em;
 		padding-inline: 1.7em;
 		background: none;
 		border: 2px solid $main-color;
+		text-align: center;
 
 		&:hover {
 			color: $color-1;
+			border-color: fade-out($main-color, 0.5);
 		}
 
 		span {

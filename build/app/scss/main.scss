@@ -172,7 +172,7 @@
 
 						&.active {
 							color: $main-color;
-							 
+
 							hr {
 								border-color: $main-color;
 							}
@@ -317,6 +317,277 @@
 			min-width: 0;
 		}
 	}
+
+	&-product {
+		position: static;
+		line-height: 1.2;
+
+		&__main-info {
+			display: flex;
+			gap: 2.3em;
+		}
+
+		&__article-text {
+			font-size: 1.4em;
+			font-weight: 400;
+			color: fade-out($color-1, 0.3);
+		}
+
+		&__heading {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5em;
+			margin-block-end: 2em;
+		}
+
+		&__desc {
+			display: -webkit-box;
+			line-clamp: 3;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			font-size: 1.6em;
+			font-weight: 300;
+			color: fade-out($color-1, 0.3);
+		}
+
+		&__item-list {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5em;
+		}
+
+		&__tab {
+			&-text {
+				font-size: 1.6em;
+				font-weight: 300;
+			}
+
+			&-list {
+				width: 100%;
+				line-height: 1.2;
+
+				& > ul {
+					& > li {
+						display: flex;
+						align-items: center;
+						padding: 1.7em;
+						justify-content: space-between;
+						gap: 1em;
+						min-height: 5.9em;
+
+						&:nth-child(odd) {
+							background-color: fade-out($main-color, 0.74);
+							border-radius: 2em;
+						}
+
+						& > p {
+							font-size: 1.6em;
+							font-weight: 300;
+
+							&:first-child {
+								flex: 0 1 227px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&__btn-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5em;
+			color: $main-color;
+
+			&:hover {
+				color: $color-1;
+			}
+
+			span {
+				font-size: 1.6em;
+				font-weight: 300;
+			}
+		}
+
+		&__info-details {
+			margin-block-start: 4em;
+
+			.tabs {
+				&__container {
+					margin-block-start: 4.3em;
+					width: 100%;
+					max-width: 86.4em;
+				}
+
+				&__item {
+					border-color: fade-out($color-1, 0.8);
+				}
+
+				&__content {
+					flex-direction: column;
+					gap: 2.9em;
+					background-color: fade-out($color-1, 0.94);
+					padding: 3em 1.7em 3.1em;
+					border-radius: 2em;
+
+					&.active {
+						display: flex;
+					}
+				}
+			}
+		}
+
+		&__list {
+			width: 100%;
+
+			& > ul {
+				display: flex;
+				flex-direction: column;
+				gap: 1.5em;
+
+				& > li {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 2em;
+					border-block-end: 1px solid fade-out($color-1, 0.7);
+					padding-block-end: 0.5em;
+
+					& > p {
+						font-size: 1.6em;
+						font-weight: 300;
+						color: fade-out($color-1, 0.1);
+
+						&:first-child {
+							flex: 0 1 13.3em;
+						}
+
+						&:last-child {
+							text-align: end;
+							flex: 0 1 18.9em;
+						}
+					}
+				}
+			}
+		}
+
+		&__wrapper-lists {
+			display: flex;
+			flex-direction: column;
+			gap: 2.6em;
+		}
+
+		&__title {
+			font-size: 2em;
+			font-weight: 300;
+		}
+
+		&__box-prev-image {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			width: 45.5em;
+			height: 42.5em;
+			flex: 0 0 auto;
+			background-color: $color-1;
+			border-radius: 2em;
+
+			img {
+				position: relative;
+				max-width: 75%;
+				max-height: 90%;
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: contain;
+				object-position: center;
+				border-radius: 2em;
+			}
+		}
+
+		&__wrap-aside {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+		}
+
+		&__grid {
+			display: grid;
+			grid-template-columns: 1fr 36.1em;
+			gap: 7.5em;
+		}
+
+		&__price {
+			font-size: 3em;
+			font-weight: 500;
+			line-height: 1.2;
+		}
+
+		&__count {
+			font-size: 1.6em;
+			font-weight: 300;
+			line-height: 1.2;
+			color: fade-out($color-1, 0.3);
+
+			b,
+			strong {
+				font-weight: inherit;
+				color: fade-out($main-color, 0.3);
+			}
+		}
+
+		&__aside {
+			&-text {
+				font-size: 1em;
+				font-weight: 500;
+				line-height: 1.2;
+				color: fade-out($color-1, 0.3);
+			}
+			&-btns {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1em;
+
+				.btn {
+					min-height: 5em;
+					width: 100%;
+					max-width: 15em;
+					padding-inline: 1.4em;
+					border-width: 1px;
+				}
+			}
+
+			&-box {
+				display: flex;
+				flex-direction: column;
+				gap: 2.1em;
+				position: sticky;
+				inset-block-start: 3.8em;
+				inset-inline-end: 0;
+				padding: 2.7em 3em 2.7em 3.1em;
+				border-radius: 2em;
+				background-color: fade-out($color-1, 0.94);
+			}
+
+			&-content {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1em;
+			}
+		}
+	}
+}
+
+.line {
+	display: inline-block;
+	width: 100%;
+	height: 1.5px;
+	background: fade-out($color-1, 0.5);
+	border-radius: 3em;
 }
 
 .prod-card {
@@ -469,18 +740,112 @@
 				pointer-events: none;
 
 				& > :where(a, span) {
-					color: $main-color;
+					color: $color-11;
 				}
 			}
 
 			& > :where(a, span) {
-				display: inline-flex;
+				display: inline-block;
+				overflow: hidden;
+				max-width: 26em;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 				align-items: center;
 				gap: var(--gap, 0.5em);
 				text-decoration: none;
 				font-size: 10px;
 				font-weight: 500;
 			}
+		}
+	}
+}
+
+.box-plug {
+	position: relative;
+	overflow: hidden auto;
+	padding-block: 8em;
+	width: 100%;
+	max-width: 100%;
+	height: 100vh;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		min-height: 100%;
+		max-width: 90%;
+		margin: auto;
+		font-size: 10px;
+	}
+
+	&__wrapper {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 2fr 1.25fr;
+		gap: 8.5em 5%;
+		width: 100%;
+	}
+
+	&__title {
+		font-weight: 300;
+		font-size: 4.8em;
+		max-width: 786px;
+		line-height: 1.2;
+	}
+
+	&__line {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: $main-color;
+		clear: both;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 3.6em;
+
+		.tabs {
+			&__container {
+				.tabs {
+					&__content {
+						grid-template-columns: 1fr 34em;
+						gap: 0;
+						background: fade-out($color-1, 0.9);
+						border-radius: 2em;
+
+						.block-page-contacts {
+							&__map {
+								border-top-left-radius: 0;
+								border-bottom-left-radius: 0;
+							}
+
+							&__list-contacts {
+								.icon {
+									color: $main-color;
+								}
+							}
+
+							&__info-box {
+								background: none;
+								border-top-right-radius: 0;
+								border-bottom-right-radius: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__logo {
+		display: flex;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
 		}
 	}
 }

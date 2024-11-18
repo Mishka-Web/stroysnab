@@ -19,13 +19,15 @@ html(lang="ru")
 
 		block title
 	body
-		include ../layout/_header
+		block header
+			include ../layout/_header
 
 		main.main
 			.wrapper
 				block main
 
-		include ../layout/_footer
+		block footer
+			include ../layout/_footer
 
 		.mob-menu
 			.mob-menu__list 

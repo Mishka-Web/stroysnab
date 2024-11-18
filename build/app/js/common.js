@@ -64,7 +64,7 @@ $(function () {
 
 	$(window).on("click", function () {
 		$(".modal, .header__menu-btn").removeClass("active");
-		$(document.body).css({ overflow: "visible" });
+		$(document.body).css({ "overflow-y": "visible" });
 	});
 
 	$(".modal__content, .header__menu").on("click", function (e) {

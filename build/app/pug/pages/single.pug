@@ -20,13 +20,73 @@ block main
 
 			.block-product__box 
 				.block-product__grid 
-					.block-product__main-info
-					.block-product__wrap-aside
+					.block-product__wrap-main-info(data-aos="fade-right" data-aos-delay="750")
+						.block-product__main-info
+							.block-product__box-prev-image 
+								img.icon(src="./img/product/image.png", alt="")
+							
+							.block-product__box-other-info
+								.block-product__heading
+									h2.block-product__title Пистолет скелетообразный "Эксперт" 320мл шестигр. шток (для герметиков)
+									p.block-product__article-text Артикул: 6511003
+								.block-product__wrapper-lists
+									.block-product__item-list 
+										p.block-product__desc Пистолет скелетообразный "Эксперт" 320мл шестигр. шток. Профессиональный<br>металличес<br>кий шприц, скелетообразный, с шестигранным стержнем.Прочная конструкция корпуса, литая рукоятка. Для герметиков, клеев.
+										a.block-product__btn-link(href="#otherInfoCard") 
+											span подробнее ↓
+									.block-product__item-list 
+										.block-product__list 
+											ul
+												li 
+													p Бренд
+													p Политех
+												li 
+													p Базовая единица
+													p шт
+												li 
+													p Цвет
+													p Оранжевый
+												li 
+													p Тип
+													p Пистолет для герметика
+										a.block-product__btn-link(href="#otherInfoCard") 
+											span все характеристики ↓					
+						
+						.block-product__info-details#otherInfoCard
+							.tabs__list 
+								button.tabs__item.active(type="button" data-tab-id="1" onclick) 
+									span Описание
+								button.tabs__item(type="button" data-tab-id="2" onclick) 
+									span Задать вопрос
+								button.tabs__item(type="button" data-tab-id="3" onclick) 
+									span Наличие
+
+							.tabs__container
+								-for(i = 1; i <= 3; i++)
+									.tabs__content(data-tab-id=i) 
+										p.block-product__tab-text Пистолет скелетообразный "Эксперт" 320мл шестигр. шток. Профессиональный металлический шприц, скелетообразный, с шестигранным стержнем.Прочная конструкция корпуса, литая рукоятка. Для герметиков, клеев.
+										.block-product__tab-list 
+											ul 
+												li 
+													p Код
+													p 6511003
+												li 
+													p Вес, кг
+													p 0.417
+												li 
+													p Диаметр, мм
+													p 7.7
+												li 
+													p Объем картриджа (трубы), мл
+													p 320
+					
+					.block-product__wrap-aside(data-aos="fade-left" data-aos-delay="750")
 						aside.block-product__aside-box 
 							.block-product__aside-content 
-								p.block-product__price 438 руб./шт
+								p.block-product__price <span>438</span> руб./шт
 								p.block-product__count В наличии на складах <b>(4)</b>
 								p.block-product__aside-text Цена действительна только для интернет-магазина и может отличаться от цен в розничных магазинах
+							span.line
 							.block-product__aside-btns
 								a.btn.btn-primary(href="#") 
 									span В корзину
