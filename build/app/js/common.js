@@ -23,6 +23,12 @@ $(function () {
 		);
 	});
 
+	$("[data-action='open-popup']").on("click", function () {
+		$(".popup[data-popup-id='" + $(this).data("popup-id") + "']").addClass(
+			"active"
+		);
+	});
+
 	if ($(".mixi-container").get(0)) {
 		mixitup(".mixi-container", {
 			animation: {

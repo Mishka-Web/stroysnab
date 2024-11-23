@@ -11,6 +11,7 @@
 // Components
 @import "components/_buttons";
 @import "components/_typography";
+@import "components/_fields";
 @import "components/_icons";
 
 @import "layout/_header";
@@ -1643,6 +1644,52 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+.popup {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
+
+	&__content {
+		max-width: 71.7em;
+		width: 100%;
+		margin: auto;
+		padding: 4.2em 5em 5em;
+		border-radius: 2em;
+		border: 2px solid $main-color;
+		min-height: 100%;
+		position: relative;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden auto;
+	}
+
+	&__btn-close {
+		display: inline-flex;
+		position: absolute;
+		inset-inline-end: 2em;
+		inset-block-start: 2em;
+
+		.icon {
+			@include box(4em);
 		}
 	}
 }

@@ -17,22 +17,47 @@ block main
 						a(href="index.html") Корзина товаров
 
 			.block-page-cart__grid
-				.block-page-cart__list-items 
-					-for(i = 0; i < 3; i++)
-						article.card-basket 
-							.card-basket__box
-								a.card-basket__image(href="single.html")  
-									img.icon(src="./img/basket/image.png", alt="")
-								.card-basket__content
-									a.card-basket__title(href="single.html")  Пена монтажная профессиональная ТЕХНОНИКОЛЬ №240 огнестойкая
-									.card-basket__counter 
-										button(type="button")
-											img.icon(src="./img/icons/minus-cirlce.png", alt="")
-										p 2
-										button(type="button")
-											img.icon(src="./img/icons/add-circle.png", alt="")
-									p.card-basket__price 4 078 руб.
-				aside.block-page-cart__aside-wrapper 
+				.block-page-cart__list-items
+					article.card-basket(data-aos="fade-right" data-aos-delay="200") 
+						.card-basket__box
+							a.card-basket__image(href="single.html")  
+								img.icon(src="./img/basket/image.png", alt="")
+							.card-basket__content
+								a.card-basket__title(href="single.html")  Пена монтажная профессиональная ТЕХНОНИКОЛЬ №240 огнестойкая
+								.card-basket__counter 
+									button(type="button")
+										img.icon(src="./img/icons/minus-cirlce.png", alt="")
+									p 2
+									button(type="button")
+										img.icon(src="./img/icons/add-circle.png", alt="")
+								p.card-basket__price 4 078 руб.
+					article.card-basket(data-aos="fade-right" data-aos-delay="400") 
+						.card-basket__box
+							a.card-basket__image(href="single.html")  
+								img.icon(src="./img/basket/image.png", alt="")
+							.card-basket__content
+								a.card-basket__title(href="single.html")  Пена монтажная профессиональная ТЕХНОНИКОЛЬ №240 огнестойкая
+								.card-basket__counter 
+									button(type="button")
+										img.icon(src="./img/icons/minus-cirlce.png", alt="")
+									p 2
+									button(type="button")
+										img.icon(src="./img/icons/add-circle.png", alt="")
+								p.card-basket__price 4 078 руб.
+					article.card-basket(data-aos="fade-right" data-aos-delay="600") 
+						.card-basket__box
+							a.card-basket__image(href="single.html")  
+								img.icon(src="./img/basket/image.png", alt="")
+							.card-basket__content
+								a.card-basket__title(href="single.html")  Пена монтажная профессиональная ТЕХНОНИКОЛЬ №240 огнестойкая
+								.card-basket__counter 
+									button(type="button")
+										img.icon(src="./img/icons/minus-cirlce.png", alt="")
+									p 2
+									button(type="button")
+										img.icon(src="./img/icons/add-circle.png", alt="")
+								p.card-basket__price 4 078 руб.
+				aside.block-page-cart__aside-wrapper(data-aos="fade-left" data-aos-delay="800")  
 					.block-page-cart__aside
 						.block-page-cart__aside-box
 							.block-page-cart__aside-item

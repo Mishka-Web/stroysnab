@@ -29,15 +29,17 @@ html(lang="ru")
 		block footer
 			include ../layout/_footer
 
-		.popup(data-popup="order") 
+		.popup.active(data-popup-id="order") 
+			.popup__container 
+				.popup__content 
+					button(type="button" class="popup__btn-close")
+						img.icon(src="./img/icons/close.svg", alt="")
+
+		.popup(data-popup-id="question") 
 			.popup__container 
 				.popup__content 
 
-		.popup(data-popup="question") 
-			.popup__container 
-				.popup__content 
-
-		.popup(data-popup="success") 
+		.popup(data-popup-id="success") 
 			.popup__container 
 				.popup__content
 
