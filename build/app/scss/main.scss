@@ -307,6 +307,8 @@
 		&-cart {
 			$this: &;
 
+			min-height: 95em;
+
 			&__grid {
 				--gap: 2em;
 
@@ -1658,6 +1660,9 @@
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
+	background-color: fade-out($color-1, 0.94);
+	// backdrop-filter: blur(10px);
+	z-index: 97;
 
 	&.active {
 		opacity: 1;
@@ -1674,6 +1679,8 @@
 		border: 2px solid $main-color;
 		min-height: 100%;
 		position: relative;
+		z-index: 99;
+		background-color: #000;
 	}
 
 	&__container {
@@ -1689,8 +1696,18 @@
 		inset-block-start: 2em;
 
 		.icon {
-			@include box(4em);
+			@include box(40px);
 		}
+	}
+}
+
+.form {
+	&__fields {
+
+	}
+
+	&__box {
+		
 	}
 }
 
