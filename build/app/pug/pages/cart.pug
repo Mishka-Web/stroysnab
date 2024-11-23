@@ -1,0 +1,51 @@
+extends ../sample/_default
+
+block tools
+	include ../utils/_mixins
+
+block title
+	title Корзина
+
+block main
+	section.block.block-page-cart
+		.container 
+			nav.breadcrumbs 
+				ul 
+					li 
+						a(href="index.html") Главная
+					li 
+						a(href="index.html") Корзина товаров
+
+			.block-page-cart__grid
+				.block-page-cart__list-items 
+					-for(i = 0; i < 3; i++)
+						article.card-basket 
+							.card-basket__box
+								a.card-basket__image(href="single.html")  
+									img.icon(src="./img/basket/image.png", alt="")
+								.card-basket__content
+									a.card-basket__title(href="single.html")  Пена монтажная профессиональная ТЕХНОНИКОЛЬ №240 огнестойкая
+									.card-basket__counter 
+										button(type="button")
+											img.icon(src="./img/icons/minus-cirlce.png", alt="")
+										p 2
+										button(type="button")
+											img.icon(src="./img/icons/add-circle.png", alt="")
+									p.card-basket__price 4 078 руб.
+				aside.block-page-cart__aside-wrapper 
+					.block-page-cart__aside
+						.block-page-cart__aside-box
+							.block-page-cart__aside-item
+								.block-page-cart__aside-heading 
+									p Итого:
+									p.block-page-cart__price-total 4 078 руб.
+								hr
+								button.btn.btn-primary(type="button") 
+									span Оформить заказ в 1 клик
+							.block-page-cart__aside-item.block-page-cart__aside-item--is-row
+								img.icon(src="./img/icons/shop.png", alt="")
+								p Самовывоз из магазина - бесплатно
+
+							.block-page-cart__aside-item.block-page-cart__aside-item--is-row
+								img.icon(src="./img/icons/wallet-check.png", alt="")
+								p Оплата наличными или<br>по карте в нашем магазине

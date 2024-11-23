@@ -302,6 +302,109 @@
 				}
 			}
 		}
+
+		&-cart {
+			$this: &;
+
+			&__grid {
+				--gap: 2em;
+
+				display: grid;
+				grid-template-columns: 1fr 36.1em;
+				gap: var(--gap, 2em);
+			}
+
+			&__aside {
+				inset-inline-end: 0;
+				inset-block-start: 2em;
+				position: sticky;
+				z-index: 20;
+
+				&-wrapper {
+					position: relative;
+				}
+
+				&-box {
+					display: flex;
+					flex-direction: column;
+					gap: var(--gap, 2em);
+				}
+
+				&-heading {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 0.5em;
+
+					p {
+						font-weight: 300;
+						color: fade-out($color-1, 0.3);
+						font-size: 1.6em;
+					}
+
+					#{$this}__price-total {
+						font-weight: 500;
+						font-size: 3em;
+						color: $color-1;
+					}
+				}
+
+				&-item {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 1em;
+					background-color: fade-out($color-1, 0.94);
+					border-radius: 2em;
+					padding: 1.5em 3em 1.6em 3.1em;
+
+					hr {
+						display: block;
+						width: 100%;
+						border-color: fade-out($color-1, 0.5);
+						border-radius: 3em;
+					}
+
+					.btn {
+						min-height: 5em;
+						padding-inline: 2.6em;
+
+						span {
+							font-size: 1.6em;
+						}
+					}
+
+					&--is {
+						&-row {
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: center;
+							text-align: start;
+							gap: 2em;
+							color: $color-1;
+							padding: 1.4em 1.4em 1.4em 3.2em;
+
+							& > p {
+								margin-block-start: 0.1em;
+								font-size: 1.6em;
+								font-weight: 200;
+								text-wrap: balance;
+							}
+
+							.icon {
+								@include box(3.5em);
+							}
+						}
+					}
+				}
+			}
+
+			&__list-items {
+				display: flex;
+				flex-direction: column;
+				gap: var(--gap, 2em);
+			}
+		}
 	}
 
 	&-intro {
@@ -652,6 +755,74 @@
 		color: $main-color;
 		font-size: 2.4em;
 		margin-block-start: auto;
+	}
+}
+
+.card-basket {
+	display: flex;
+	background-color: fade-out($color-1, 0.94);
+	border-radius: 2em;
+	overflow: hidden;
+	padding: 2.4em;
+	min-height: 16.2em;
+
+	&__box {
+		display: flex;
+		align-items: center;
+		gap: 2.7em;
+		width: 100%;
+		flex-grow: 1;
+	}
+
+	&__image {
+		display: flex;
+
+		img {
+			@include box(11.5em);
+			object-fit: cover;
+			border-radius: 1em;
+		}
+	}
+
+	&__counter {
+		display: inline-flex;
+		align-items: center;
+		gap: 1em;
+
+		p {
+			font-size: 3em;
+			font-weight: 300;
+			cursor: default;
+		}
+
+		button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			.icon {
+				@include box(3.5em);
+			}
+		}
+	}
+
+	&__price {
+		font-size: 3em;
+		font-weight: 500;
+	}
+
+	&__title {
+		font-size: 2em;
+		font-weight: 200;
+		max-width: 18em;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5em;
+		flex-grow: 1;
 	}
 }
 

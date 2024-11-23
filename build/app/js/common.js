@@ -12,9 +12,9 @@ $(function () {
 
 	Fancybox.bind("[data-fancybox]");
 
-	$(window).on("resize scroll", function () {
-		AOS.refresh();
-	});
+	// $(window).on("resize scroll", function () {
+	// 	AOS.refresh();
+	// });
 
 	$(window).on("load resize scroll", function () {
 		$(".mob-menu").toggleClass(
@@ -31,21 +31,6 @@ $(function () {
 			},
 		});
 	}
-	// $(".map").each(function (i, el) {
-	// 	$map = $(this);
-	// 	$mapID = $($map.attr("id"));
-	// 	$mapX = $map.data("x");
-	// 	$mapY = $map.data("y");
-	// 	$mapZoom = $map.data("zoom");
-
-	// 	ymaps.ready(function() {
-	// 		new ymaps.Map($mapID, {
-	// 			zoom: $mapZoom,
-	// 			center: [$mapX, $mapY],
-	// 			controls: [],
-	// 		});
-	// 	});
-	// });
 
 	$(".tabs__content[data-tab-id=3]").addClass("active");
 
