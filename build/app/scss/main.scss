@@ -1661,8 +1661,9 @@
 	visibility: hidden;
 	pointer-events: none;
 	background-color: fade-out($color-1, 0.94);
-	// backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 	z-index: 97;
+	transition: $base-trn;
 
 	&.active {
 		opacity: 1;
@@ -1677,7 +1678,6 @@
 		padding: 4.2em 5em 5em;
 		border-radius: 2em;
 		border: 2px solid $main-color;
-		min-height: 100%;
 		position: relative;
 		z-index: 99;
 		background-color: #000;
@@ -1686,7 +1686,9 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
+		flex-grow: 1;
 		overflow: hidden auto;
+		padding: 3em;
 	}
 
 	&__btn-close {

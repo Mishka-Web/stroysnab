@@ -12,15 +12,15 @@ $(function () {
 
 	Fancybox.bind("[data-fancybox]");
 
-	// $(window).on("resize scroll", function () {
-	// 	AOS.refresh();
-	// });
-
 	$(window).on("load resize scroll", function () {
 		$(".mob-menu").toggleClass(
 			"is-visible",
 			$(this).scrollTop() > $(".header-inner").height() + 24
 		);
+	});
+
+	$("[data-action='close-popup']").on("click", function () {
+		$($(this).closest(".popup")[0]).removeClass("active");
 	});
 
 	$("[data-action='open-popup']").on("click", function () {
