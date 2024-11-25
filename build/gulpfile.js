@@ -21,6 +21,9 @@ const CONFIG = {
 		libs: [
 			"app/libs/jquery/jquery.min.js",
 			"./node_modules/mixitup/dist/mixitup.min.js",
+			"./node_modules/swiper/swiper-bundle.min.js",
+			"./node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js",
+			"./node_modules/aos/dist/aos.js",
 			"app/libs/jquery/plugins/Inputmask-5.x/dist/jquery.inputmask.min.js",
 		],
 	},
@@ -89,10 +92,6 @@ function scripts() {
 		.pipe(dest("app/js"))
 		.pipe(browser.stream());
 }
-
-// function sounds() {
-// 	return src("app/assets/sounds/**/*").pipe(dest("dist/assets/sounds/"));
-// }
 
 // Сжатие и кэширование изображений
 function images() {

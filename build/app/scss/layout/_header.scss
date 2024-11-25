@@ -53,6 +53,7 @@
 		padding: 0.5em 2.8em;
 		font-weight: 600;
 		color: $main-color;
+		transition: $base-trn;
 
 		.icon {
 			color: $main-color;
@@ -101,6 +102,17 @@
 		width: 100%;
 		max-width: 21.8em;
 		border-radius: 5.2em;
+		transition: $base-trn;
+
+		&:focus-within {
+			border-color: $color-1;
+
+			input {
+				&::placeholder {
+					color: fade-out($color-1, 0.5);
+				}
+			}
+		}
 
 		input {
 			display: flex;
@@ -109,9 +121,11 @@
 			padding: 5px 14px 5px 28px;
 			font-size: 1.6em;
 			font-weight: 600;
+			transition: $base-trn;
 
 			&::placeholder {
 				font-size: 1em;
+				transition: $base-trn;
 			}
 		}
 

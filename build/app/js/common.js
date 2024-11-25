@@ -3,6 +3,12 @@ $(function () {
 		true;
 	});
 
+	$(document.body).data(
+		"scrollbar-width",
+		parseInt(document.documentElement.clientWidth) -
+			parseInt(window.innerWidth)
+	);
+
 	AOS.init({
 		duration: 750,
 		easing: "ease",
@@ -21,12 +27,30 @@ $(function () {
 
 	$("[data-action='close-popup']").on("click", function () {
 		$($(this).closest(".popup")[0]).removeClass("active");
+
+		$(".popup__container").css({
+			"margin-left": 0,
+		});
+
+		$(document.body).css({
+			"overflow-y": "visible",
+			"margin-left": 0,
+		});
 	});
 
 	$("[data-action='open-popup']").on("click", function () {
 		$(".popup[data-popup-id='" + $(this).data("popup-id") + "']").addClass(
 			"active"
 		);
+
+		$(".popup__container").css({
+			"margin-left": $(document.body).data("scrollbar-width"),
+		});
+
+		$(document.body).css({
+			"overflow-y": "hidden",
+			"margin-left": $(document.body).data("scrollbar-width"),
+		});
 	});
 
 	if ($(".mixi-container").get(0)) {
@@ -48,17 +72,27 @@ $(function () {
 		window.navigator.vibrate(35);
 	});
 
-	$("[data-mask=tel], .data-mask--tel").inputmask("+7 (999)-999-99-99", {
+	$("[data-mask=tel], .data-mask--is-tel").inputmask("+7 (999)-999-99-99", {
 		showMaskOnHover: false,
 		placeholder: "+7 (___)-___-__-__",
 	});
 
 	$(window).on("click", function () {
-		$(".modal, .header__menu-btn").removeClass("active");
-		$(document.body).css({ "overflow-y": "visible" });
+		$(".modal, .header__menu-btn, .popup").removeClass("active");
+
+		$(".popup__container").css({
+			"margin-left": 0,
+		});
+
+		$(document.body).css({
+			"overflow-y": "visible",
+			"margin-left": 0,
+		});
 	});
 
-	$(".modal__content, .header__menu").on("click", function (e) {
+	$(
+		".modal__content, .header__menu, .popup__content, [data-action='open-popup']"
+	).on("click", function (e) {
 		e.stopPropagation();
 	});
 

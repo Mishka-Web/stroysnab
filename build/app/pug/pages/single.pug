@@ -32,7 +32,7 @@ block main
 								.block-product__wrapper-lists
 									.block-product__item-list 
 										p.block-product__desc Пистолет скелетообразный "Эксперт" 320мл шестигр. шток. Профессиональный<br>металличес<br>кий шприц, скелетообразный, с шестигранным стержнем.Прочная конструкция корпуса, литая рукоятка. Для герметиков, клеев.
-										a.block-product__btn-link(href="#otherInfoCard") 
+										a.block-product__btn-link(href="#blockContent") 
 											span подробнее ↓
 									.block-product__item-list 
 										.block-product__list 
@@ -61,7 +61,7 @@ block main
 								button.tabs__item(type="button" data-tab-id="3" onclick) 
 									span Наличие
 
-							.tabs__container
+							.tabs__container#blockContent
 								-for(i = 1; i <= 3; i++)
 									.tabs__content(data-tab-id=i) 
 										p.block-product__tab-text Пистолет скелетообразный "Эксперт" 320мл шестигр. шток. Профессиональный металлический шприц, скелетообразный, с шестигранным стержнем.Прочная конструкция корпуса, литая рукоятка. Для герметиков, клеев.

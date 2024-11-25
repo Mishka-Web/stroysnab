@@ -18,7 +18,7 @@ block main
 
 			.block-page-cart__grid
 				.block-page-cart__list-items
-					article.card-basket(data-aos="fade-right" data-aos-delay="200") 
+					article.card-basket(data-aos="fade-right" data-aos-delay="200" data-aos-offset="0") 
 						.card-basket__box
 							a.card-basket__image(href="single.html")  
 								img.icon(src="./img/basket/image.png", alt="")
@@ -31,7 +31,7 @@ block main
 									button(type="button")
 										img.icon(src="./img/icons/add-circle.png", alt="")
 								p.card-basket__price 4 078 руб.
-					article.card-basket(data-aos="fade-right" data-aos-delay="400") 
+					article.card-basket(data-aos="fade-right" data-aos-delay="400"  data-aos-offset="0") 
 						.card-basket__box
 							a.card-basket__image(href="single.html")  
 								img.icon(src="./img/basket/image.png", alt="")
@@ -44,7 +44,7 @@ block main
 									button(type="button")
 										img.icon(src="./img/icons/add-circle.png", alt="")
 								p.card-basket__price 4 078 руб.
-					article.card-basket(data-aos="fade-right" data-aos-delay="600") 
+					article.card-basket(data-aos="fade-right" data-aos-delay="600"  data-aos-offset="0") 
 						.card-basket__box
 							a.card-basket__image(href="single.html")  
 								img.icon(src="./img/basket/image.png", alt="")
@@ -65,7 +65,7 @@ block main
 									p Итого:
 									p.block-page-cart__price-total 4 078 руб.
 								hr
-								button.btn.btn-primary(type="button") 
+								button.btn.btn-primary(type="button" data-popup-id="order" data-action="open-popup") 
 									span Оформить заказ в 1 клик
 							.block-page-cart__aside-item.block-page-cart__aside-item--is-row
 								img.icon(src="./img/icons/shop.png", alt="")

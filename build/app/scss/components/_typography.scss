@@ -10,6 +10,13 @@
 	font-weight: 900;
 }
 
+.title, .subtitle {
+	b, strong {
+		font-weight: inherit;
+		color: $main-color;
+	}
+}
+
 .content {
 	line-height: 1.2;
 	

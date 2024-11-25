@@ -12,3 +12,9 @@
 		color: fade-out($color-1, 0.5);
 	}
 }
+
+.textarea {
+	padding-block: 0.9em;
+	resize: none;
+	min-height: 6em;
+}

@@ -518,7 +518,7 @@
 		}
 
 		&__info-details {
-			margin-block-start: 4em;
+			padding-block-start: 4em;
 
 			.tabs {
 				&__container {
@@ -1664,6 +1664,9 @@
 	backdrop-filter: blur(10px);
 	z-index: 97;
 	transition: $base-trn;
+	transition-duration: 0.4s;
+	transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	font-size: 10px;
 
 	&.active {
 		opacity: 1;
@@ -1688,7 +1691,7 @@
 		flex-direction: column;
 		flex-grow: 1;
 		overflow: hidden auto;
-		padding: 3em;
+		padding: 6em 2.4em;
 	}
 
 	&__btn-close {
@@ -1701,15 +1704,164 @@
 			@include box(40px);
 		}
 	}
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		max-width: 42.5em;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	&__title {
+		font-size: 3.6em;
+		font-weight: 400;
+	}
+
+	&__desc {
+		font-size: 2em;
+		font-weight: 400;
+		color: fade-out($color-1, 0.5);
+	}
+
+	&__form {
+		margin-block-start: 3.1em;
+	}
+
+	&__output {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-block-start: 5.3em;
+
+		.icon {
+			&-check {
+				@include box(10.9em);
+			}
+		}
+	}
+
+	&[data-popup-id="success"] {
+		.form {
+			&__box-submit {
+				margin-block-start: 4.2em;
+			}
+		}
+	}
 }
 
 .form {
 	&__fields {
-
+		display: flex;
+		flex-direction: column;
+		gap: 4em;
 	}
 
-	&__box {
+	&__input {
+		@include box(100%, 3em);
+		font-size: 2em;
+		border-radius: 1.7em;
+		border: 1px solid $color-1;
+		padding-inline: 1.7em;
+
+		&::placeholder {
+			transition: $base-trn;
+			color: fade-out($color-1, 0.5);
+		}
+
+		&:focus-within {
+			&::placeholder {
+				color: $color-1;
+			}
+		}
+	}
+
+	&__box-submit {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2em;
+		margin-block-start: 6em;
+
+		.btn {
+			min-height: 5em;
+			padding-inline: 2.6em;
+			font-weight: 300;
 		
+			span {
+				font-size: 2.4em;
+			}
+		}
+	}
+
+	&__wrap-field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+
+		& > p {
+			font-size: 2em;
+			line-height: 1.2;
+			color: $main-color;
+			margin-inline-start: 1.75em;
+		}
+	}
+	
+	&__acceptance {
+		display: inline-flex;
+		align-items: center;
+		gap: 1em;
+		cursor: pointer;
+
+		input {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			width: 2.4em;
+			height: 2.4em;
+			border: 2px solid $main-color;
+			border-radius: 0.6em;
+			cursor: pointer;
+			position: relative;
+
+			&::before {
+				content: "";
+				display: inline-block;
+				@include box(1.1em);
+				background: url("../img/icons/check.png") center/contain no-repeat;
+				position: absolute;
+				inset-inline-start: 50%;
+				inset-block-start: 50%;
+				transform: translate(-50%, -50%) translateZ(0) scale(0);
+				transition: $base-trn;
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+
+			&:checked {
+				&::before {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: all;
+					transform: translate(-50%, -50%) translateZ(0) scale(1);
+				}
+			}
+		}
+
+		p {
+			font-size: 1.5em;
+			font-weight: 200;
+
+			a {
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
 	}
 }
 

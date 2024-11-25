@@ -5,16 +5,7 @@ html(lang="ru")
 	head
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-		//- meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
-		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
 		link(rel="stylesheet" href="./css/main.min.css")
 
 		block title
@@ -29,23 +20,101 @@ html(lang="ru")
 		block footer
 			include ../layout/_footer
 
-		.popup.active(data-popup-id="order") 
+		.popup(data-popup-id="order") 
 			.popup__container 
 				.popup__content 
 					button(type="button" class="popup__btn-close" data-action="close-popup")
 						img.icon(src="./img/icons/close.png" alt="")
+					.popup__heading
+						h3.popup__title.subtitle Оформить <b>заказ в 1 клик</b>
+						p.popup__desc оформите заказ, наш менеджер перезвонит, чтобы уточнить детали
+					.popup__form 
+						form.form(action="#" method="get" role="search")
+							.form__fields 
+								label.form__wrap-field
+									p Ваше имя
+									input.form__input(type="text" placeholder="Сергеев Александ")
+								label.form__wrap-field
+									p Ваш номер телефона
+									input.form__input.data-mask--is-tel(type="text" placeholder="+7 (___)-___-__-__")
+								label.form__wrap-field
+									p Ваша электронная почта
+									input.form__input(type="email" placeholder="example@mail.ru" required)
+								label.form__wrap-field
+									p Комментарий к заказу
+									textarea.form__input.textarea(type="text" placeholder="Хочу, чтобы..")
+							.form__box-submit 
+								button.btn.btn-primary(type="submit")
+									span Оформить заказ
+
+								label.form__acceptance
+									input(type="checkbox" checked)
+									p.form__acceptance-text Я согласен на <a href="#">обработку персональных данных</a>
 
 		.popup(data-popup-id="question") 
 			.popup__container 
 				.popup__content 
 					button(type="button" class="popup__btn-close" data-action="close-popup")
 						img.icon(src="./img/icons/close.png" alt="")
+					.popup__heading
+						h3.popup__title.subtitle Задайте вопрос
+						p.popup__desc оформите заказ, наш менеджер перезвонит, чтобы уточнить детали
+					.popup__form 
+						form.form(action="#" method="get" role="search")
+							.form__fields 
+								label.form__wrap-field
+									p Ваше имя
+									input.form__input(type="text" placeholder="Сергеев Александ")
+								label.form__wrap-field
+									p Ваш номер телефона
+									input.form__input.data-mask--is-tel(type="text" placeholder="+7 (___)-___-__-__")
+								label.form__wrap-field
+									p Ваша электронная почта
+									input.form__input(type="email" placeholder="example@mail.ru" required)
+								label.form__wrap-field
+									p Ваш вопрос
+									textarea.form__input.textarea(type="text" placeholder="Подскажите пожалуйста..")
+							.form__box-submit 
+								button.btn.btn-primary(type="submit")
+									span Оформить заказ
 
-		.popup(data-popup-id="success") 
+								label.form__acceptance
+									input(type="checkbox" checked)
+									p.form__acceptance-text Я согласен на <a href="#">обработку персональных данных</a>
+
+		.popup(data-popup-id="success-order") 
 			.popup__container 
 				.popup__content
 					button(type="button" class="popup__btn-close" data-action="close-popup")
 						img.icon(src="./img/icons/close.png" alt="")
+
+					.popup__heading
+						h3.popup__title.subtitle Заказ оформлен
+						p.popup__desc вот-вот наш менеджер перезвонит, чтобы уточнить детали
+
+					.popup__output
+						img.icon.icon-check(src="./img/icons/tick-square.png" alt="")
+
+					.form__box-submit 
+						button.btn.btn-primary(type="button" data-action="close-popup")
+							span Отлично, жду
+
+		.popup(data-popup-id="success-question") 
+			.popup__container 
+				.popup__content
+					button(type="button" class="popup__btn-close" data-action="close-popup")
+						img.icon(src="./img/icons/close.png" alt="")
+
+					.popup__heading
+						h3.popup__title.subtitle Заявка отправлена
+						p.popup__desc вот-вот наш менеджер перезвонит, чтобы ответить на ваш вопрос
+
+					.popup__output
+						img.icon.icon-check(src="./img/icons/tick-square.png" alt="")
+
+					.form__box-submit 
+						button.btn.btn-primary(type="button" data-action="close-popup")
+							span Отлично, жду
 
 		.mob-menu
 			.mob-menu__list 
