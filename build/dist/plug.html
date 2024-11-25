@@ -2,20 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
     <link rel="stylesheet" href="./css/main.min.css">
     <title>Этап обновления | StroySnab</title>
   </head>
   <body>
-	
     <main class="main">
       <div class="wrapper">
         <div class="box-plug">
@@ -118,6 +109,116 @@
         </div>
       </div>
     </main>
+    <div class="popup" data-popup-id="order"> 
+      <div class="popup__container"> 
+        <div class="popup__content"> 
+          <button class="popup__btn-close" type="button" data-action="close-popup"><img class="icon" src="./img/icons/close.png" alt=""></button>
+          <div class="popup__heading">
+            <h3 class="popup__title subtitle">Оформить <b>заказ в 1 клик</b></h3>
+            <p class="popup__desc">оформите заказ, наш менеджер перезвонит, чтобы уточнить детали</p>
+          </div>
+          <div class="popup__form"> 
+            <form class="form" action="#" method="get" role="search">
+              <div class="form__fields"> 
+                <label class="form__wrap-field">
+                  <p>Ваше имя</p>
+                  <input class="form__input" type="text" placeholder="Сергеев Александ">
+                </label>
+                <label class="form__wrap-field">
+                  <p>Ваш номер телефона</p>
+                  <input class="form__input data-mask--is-tel" type="text" placeholder="+7 (___)-___-__-__">
+                </label>
+                <label class="form__wrap-field">
+                  <p>Ваша электронная почта</p>
+                  <input class="form__input" type="email" placeholder="example@mail.ru" required>
+                </label>
+                <label class="form__wrap-field">
+                  <p>Комментарий к заказу</p>
+                  <textarea class="form__input textarea" type="text" placeholder="Хочу, чтобы.."></textarea>
+                </label>
+              </div>
+              <div class="form__box-submit"> 
+                <button class="btn btn-primary" type="submit"><span>Оформить заказ</span></button>
+                <label class="form__acceptance">
+                  <input type="checkbox" checked>
+                  <p class="form__acceptance-text">Я согласен на <a href="#">обработку персональных данных</a></p>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" data-popup-id="question"> 
+      <div class="popup__container"> 
+        <div class="popup__content"> 
+          <button class="popup__btn-close" type="button" data-action="close-popup"><img class="icon" src="./img/icons/close.png" alt=""></button>
+          <div class="popup__heading">
+            <h3 class="popup__title subtitle">Задайте вопрос</h3>
+            <p class="popup__desc">оформите заказ, наш менеджер перезвонит, чтобы уточнить детали</p>
+          </div>
+          <div class="popup__form"> 
+            <form class="form" action="#" method="get" role="search">
+              <div class="form__fields"> 
+                <label class="form__wrap-field">
+                  <p>Ваше имя</p>
+                  <input class="form__input" type="text" placeholder="Сергеев Александ">
+                </label>
+                <label class="form__wrap-field">
+                  <p>Ваш номер телефона</p>
+                  <input class="form__input data-mask--is-tel" type="text" placeholder="+7 (___)-___-__-__">
+                </label>
+                <label class="form__wrap-field">
+                  <p>Ваша электронная почта</p>
+                  <input class="form__input" type="email" placeholder="example@mail.ru" required>
+                </label>
+                <label class="form__wrap-field">
+                  <p>Ваш вопрос</p>
+                  <textarea class="form__input textarea" type="text" placeholder="Подскажите пожалуйста.."></textarea>
+                </label>
+              </div>
+              <div class="form__box-submit"> 
+                <button class="btn btn-primary" type="submit"><span>Оформить заказ</span></button>
+                <label class="form__acceptance">
+                  <input type="checkbox" checked>
+                  <p class="form__acceptance-text">Я согласен на <a href="#">обработку персональных данных</a></p>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" data-popup-id="success-order"> 
+      <div class="popup__container"> 
+        <div class="popup__content">
+          <button class="popup__btn-close" type="button" data-action="close-popup"><img class="icon" src="./img/icons/close.png" alt=""></button>
+          <div class="popup__heading">
+            <h3 class="popup__title subtitle">Заказ оформлен</h3>
+            <p class="popup__desc">вот-вот наш менеджер перезвонит, чтобы уточнить детали</p>
+          </div>
+          <div class="popup__output"><img class="icon icon-check" src="./img/icons/tick-square.png" alt=""></div>
+          <div class="form__box-submit"> 
+            <button class="btn btn-primary" type="button" data-action="close-popup"><span>Отлично, жду</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" data-popup-id="success-question"> 
+      <div class="popup__container"> 
+        <div class="popup__content">
+          <button class="popup__btn-close" type="button" data-action="close-popup"><img class="icon" src="./img/icons/close.png" alt=""></button>
+          <div class="popup__heading">
+            <h3 class="popup__title subtitle">Заявка отправлена</h3>
+            <p class="popup__desc">вот-вот наш менеджер перезвонит, чтобы ответить на ваш вопрос</p>
+          </div>
+          <div class="popup__output"><img class="icon icon-check" src="./img/icons/tick-square.png" alt=""></div>
+          <div class="form__box-submit"> 
+            <button class="btn btn-primary" type="button" data-action="close-popup"><span>Отлично, жду</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="mob-menu">
       <div class="mob-menu__list"> 
         <ul> 
@@ -132,9 +233,7 @@
           <li> <a href="#"><svg class="icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7.5H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 12.5H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 17.5H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></li>
         </ul>
       </div>
-    </div>
-	
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    </div><script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/scripts.min.js"></script>
   </body>
 </html>

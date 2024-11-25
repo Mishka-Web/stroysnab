@@ -688,6 +688,10 @@
 	}
 }
 
+.logo {
+	display: inline-flex;
+}
+
 .line {
 	display: inline-block;
 	width: 100%;
@@ -867,10 +871,6 @@
 			border-color: $main-color;
 		}
 	}
-}
-
-.logo {
-	display: inline-flex;
 }
 
 .breadcrumbs {

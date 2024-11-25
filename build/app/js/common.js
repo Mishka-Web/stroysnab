@@ -90,11 +90,12 @@ $(function () {
 		});
 	});
 
-	$(
-		".modal__content, .header__menu, .popup__content, [data-action='open-popup']"
-	).on("click", function (e) {
-		e.stopPropagation();
-	});
+	$(".header__menu, .popup__content, [data-action='open-popup']").on(
+		"click",
+		function (e) {
+			e.stopPropagation();
+		}
+	);
 
 	new Swiper(".block-intro__main-slider .swiper", {
 		slidesPerView: 1,
