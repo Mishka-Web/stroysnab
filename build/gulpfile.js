@@ -21,6 +21,7 @@ const CONFIG = {
 		libs: [
 			"app/libs/jquery/jquery.min.js",
 			"./node_modules/mixitup/dist/mixitup.min.js",
+			"app/libs/mixitup-multifilter.min.js",
 			"./node_modules/swiper/swiper-bundle.min.js",
 			"./node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js",
 			"./node_modules/aos/dist/aos.js",
