@@ -15,7 +15,8 @@ $breakpoints: (
 }
 
 @media screen and (min-width: 640px) {
-	.mob-menu {
+	.mob-menu,
+	.menu-catalog__btn-close {
 		display: none;
 	}
 }
@@ -337,8 +338,11 @@ $breakpoints: (
 		display: none;
 	}
 
-	.menu-catalog__wrapper {
-		padding-inline-end: 6em;
+	.menu-catalog__aside {
+		overflow-y: hidden;
+		height: 68px;
+		flex: 0 0 auto;
+		padding-inline-end: 4.2em;
 	}
 
 	.menu-catalog {
@@ -410,7 +414,7 @@ $breakpoints: (
 		gap: 4em;
 	}
 
-	.menu-catalog__aside-list>ul>li>button {
+	.menu-catalog__aside-list > ul > li > button {
 		font-size: 8px;
 	}
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
 
 * {
 	padding: 0;
@@ -30,6 +30,8 @@
 	accent-color: $accent-color;
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
 }
 
 input,
@@ -81,9 +83,7 @@ html {
 
 body {
 	display: flex;
-	flex: {
-		direction: column;
-	}
+	flex-direction: column;
 	font: {
 		style: normal;
 		weight: $base-fw;
@@ -91,7 +91,7 @@ body {
 		font-optical-sizing: auto;
 	}
 	color: $color-1;
-	background: $base-color url("../img/bg.png") 0% 35%/cover no-repeat fixed;
+	background: $base-color url("../img/bg.png") 0% 35% / cover no-repeat fixed;
 	font-variant-numeric: lining-nums;
 	overflow-x: hidden;
 }
